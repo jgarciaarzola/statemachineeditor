@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: StateMachineEditor
+Bundle-SymbolicName: StateMachineEditor;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: prueba.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.draw2d;bundle-version="3.7.0",
+ org.eclipse.gef;bundle-version="3.7.0",
+ org.eclipse.core.resources;bundle-version="3.7.100",
+ org.eclipse.ui.ide;bundle-version="3.7.0",
+ org.eclipse.jdt.ui;bundle-version="3.7.0",
+ org.eclipse.jdt.core;bundle-version="3.7.0",
+ org.eclipse.jdt.core.manipulation;bundle-version="1.4.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Import-Package: com.ibm.icu.text;version="4.4.2.1"
+Bundle-ClassPath: lib/cleda-commons-0.9.0.jar,
+ lib/freemarker.jar,
+ .
+ 

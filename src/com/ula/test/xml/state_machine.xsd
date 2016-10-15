@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.statemachine.org/state_machine.xsd" xmlns="http://www.statemachine.org/state_machine.xsd">
+	
+	<xs:element name="state_machine">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="eventSM" maxOccurs="unbounded"/>
+				<xs:element ref="state" maxOccurs="unbounded" />
+				<xs:element ref="initial"/>
+			</xs:sequence>
+			<xs:attribute name="name" type="xs:string" use="required" />
+			<xs:attribute name="package" type="xs:string" use="required" />
+			<xs:attribute name="pathJava" type="xs:string" use="required" />
+			<xs:attribute name="alternativeTemplateDirectory" type="xs:string" use="optional" />
+			<xs:attribute name="alternativeTemplateName" type="xs:string" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	
+<xs:element name="initial">
+		<xs:complexType>
+			<xs:attribute name="name" type="xs:string" use="required"/>
+			<xs:attribute name= "type" type="xs:string" use="required"/>
+			<xs:attribute name = "x" type="xs:int" use="required"/>
+			<xs:attribute name = "y" type="xs:int" use="required"/>
+			<xs:attribute name = "w" type="xs:int" use="required"/>
+			<xs:attribute name = "h" type="xs:int" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+
+
+
+
+
+	<xs:element name="state">
+		<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="Arc" maxOccurs="unbounded" />
+			<xs:element ref="labelState" />
+		</xs:sequence>
+			<xs:attribute name= "type" type="xs:string" use="required"/>
+			<xs:attribute name = "x" type="xs:int" use="required"/>
+			<xs:attribute name = "y" type="xs:int" use="required"/>
+			<xs:attribute name = "w" type="xs:int" use="required"/>
+			<xs:attribute name = "h" type="xs:int" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	
+	<xs:element name="Arc">
+		<xs:complexType>
+		<xs:sequence>
+				<xs:element ref="source"/>
+				<xs:element ref="target"/>
+				<xs:element ref = "eventArc"/>
+				<xs:element ref = "bendPoints" maxOccurs="unbounded"/>
+		</xs:sequence>		
+				
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="source">
+		<xs:complexType>
+			<xs:sequence>
+			<xs:element ref="state"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	
+	<xs:element name="target">
+		<xs:complexType>
+			<xs:sequence>
+			<xs:element ref="state"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	
+	<xs:element name="eventSM">
+		<xs:complexType>
+			<xs:attribute name ="name" type="xs:string" use="required"/>
+		</xs:complexType>	
+	</xs:element>
+	
+	<xs:element name="eventArc">
+		<xs:complexType>
+			<xs:attribute name ="name" type="xs:string" use="required"/>
+			<xs:attribute name = "x" type="xs:int" use="required"/>
+			<xs:attribute name = "y" type="xs:int" use="required"/>
+		</xs:complexType>	
+	</xs:element>
+	
+	<xs:element name="labelState">
+		<xs:complexType>
+			<xs:attribute name ="name" type="xs:string" use="required"/>
+			<xs:attribute name = "x" type="xs:int" use="required"/>
+			<xs:attribute name = "y" type="xs:int" use="required"/>
+		</xs:complexType>	
+	</xs:element>
+	
+	<xs:element name="bendPoints">
+		<xs:complexType>
+			<xs:attribute name = "d1W" type="xs:int" use="required"/>
+			<xs:attribute name = "d1H" type="xs:int" use="required"/>
+			<xs:attribute name = "d2W" type="xs:int" use="required"/>
+			<xs:attribute name = "d2H" type="xs:int" use="required"/>
+		</xs:complexType>	
+	</xs:element>
+	
+	
+	
+	</xs:schema>
+	
+	
+	
+	
+	

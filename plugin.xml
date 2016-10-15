@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+ <extension
+       point="org.eclipse.ui.editors">
+       <editor
+       class="com.ula.editors.Editor"
+		default="true"
+		extensions="smx"
+		id="PluginEditor.editors"
+		name="StateMachineEditor"
+		contributorClass="com.ula.editors.EditorActionBarContributor">
+		</editor>
+ </extension>
+ 
+   <extension point="org.eclipse.ui.newWizards">
+      <category  id="StateMachine" name="StateMachine">
+  		</category>
+        <wizard name="State Machine Diagram"
+              icon="circulo.jpeg"
+              category="StateMachine"
+              class="com.ula.editors.StateMachineCreationWizard"
+              id="com.ula.editors.StateMachineCreationWizard">
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+   
+   
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="com.ula.popupMenu"
+            objectClass="org.eclipse.core.resources.IResource">
+         <action
+               class="com.ula.freemarker.generator.GenerateCodeActionDelegate"
+               enablesFor="+"
+               id="com.ula.freemarker.generator.GenerateCodeActionDelegate"
+               label="Generate Code State Machine"
+               menubarPath="com.ula.popupSubMenu/content"
+               tooltip="Generate Code State Machine"/>
+         <menu
+               id="com.ula.popupSubMenu"
+               label="Generate"
+               path="additions">
+            <groupMarker name="content"/>
+            <separator name="additions"/>
+         </menu>
+      </objectContribution>
+  </extension>
+      
+           
+   
+ </plugin>

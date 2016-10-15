@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state_machine xmlns="http://www.statemachine.org/state_machine.xsd" name ="jesus">
+
+	<event name="algo"/>
+	<event name="jesus"/>
+	
+	<state name="E0" type = "final" x="5" y="5" w="5" h="5">
+	<transition name="connection1" event="algo">	
+	<source>
+	<state name="E0" type = "final" x="5" y="5" w="5" h="5" />
+	</source>
+	<target>
+	<state name="E1" type = "final" x="5" y="5" w="5" h="5"/>
+	</target>	
+	</transition>
+	</state>
+	<state name="E1" type = "final" x="5" y="5" w="5" h="5" />
+	<state name="E2" type = "final" x="5" y="5" w="5" h="5" />
+	
+		
+	
+</state_machine>
